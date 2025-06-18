@@ -10,6 +10,7 @@
 #pragma once
 
 #include <Eigen/Core>
+#include <cstdint>
 
 namespace grid_map {
 

@@ -32,8 +32,6 @@ find_package(catkin REQUIRED
   ${CATKIN_PACKAGE_DEPENDENCIES}
 )
 
-find_package(TBB 2020.1 EXACT REQUIRED)
-
 find_package(OpenCV REQUIRED)
 
 ###################################
@@ -77,7 +75,6 @@ add_library(${PROJECT_NAME}
   src/MeanInRadiusFilter.cpp
   src/MedianFillFilter.cpp
   src/MockFilter.cpp
-  src/NormalVectorsFilter.cpp
   src/CurvatureFilter.cpp
   src/NormalColorMapFilter.cpp
   src/LightIntensityFilter.cpp
@@ -94,7 +91,6 @@ add_library(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME}
   PRIVATE
-    ${TBB_INCLUDE_DIRS}
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -104,7 +100,6 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
-  ${TBB_LIBRARIES}
   ${OpenCV_LIBRARIES}
 )
 
@@ -124,7 +119,6 @@ target_include_directories(${PROJECT_NAME}_plugins
 
 target_link_libraries(${PROJECT_NAME}_plugins
   ${PROJECT_NAME}
-  ${TBB_LIBRARIES} # is this necessary?
   ${OpenCV_LIBRARIES} # is this necessary?
 )
 
